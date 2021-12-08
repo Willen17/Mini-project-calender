@@ -6,6 +6,7 @@
 
 body {
     height: 100vh;
+    background-color: #F3F0E8;
 
 }
 
@@ -16,7 +17,7 @@ body {
 }
 
 main{
-    height: 80%;
+    height: 90%;
     display: flex;
 }
 
@@ -27,11 +28,14 @@ main{
 }
 
 .calendar-container{
-    width: 100%;
+    margin-top: 1rem;
+    width: 75%;
     height: 100%;
     overflow: scroll;
     background-color: cornflowerblue;
-}
+  }
+
+
 
 @media (max-width: 768px) {
     .calendar-container {
