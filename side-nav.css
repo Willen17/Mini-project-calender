@@ -55,6 +55,14 @@
 }
 .fa-plus-circle {
     font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#side-nav-current-date {
+    padding-bottom: .5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: .8rem;
+    color:  black;
 }
 
 .schedule-row2 {
@@ -63,6 +71,7 @@
     height: 4rem;
     background-color: #F3F0E8;
     border-radius: .2rem;
+    cursor: pointer;
 }
 
 .schedule-color-block {
@@ -76,6 +85,20 @@
     font-size: 1rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+/* Hovers */
+
+.schedule-row2:hover {
+    transition: ease-in-out;
+    background-color: #9b9994;
+}
+
+.fa-plus-circle:hover {
+    transition: ease-in-out;
+    color: #9b9994;
+}
+
+/* Mediaqueries */
 
 @media (max-width: 1510px) {
     .schedule-row1 {
@@ -92,6 +115,7 @@
 @media (max-width: 1365px) {
     .nav-inner-div1 {
         flex-direction: column;
+        height: 40%;
     }
 
     #freezing-img {
@@ -115,7 +139,12 @@
 @media (max-width: 1110px) {
   
     .schedule-color-block {
-        display: none;
+        width: 90%;
+    }
+
+    .schedule-row2 {
+        flex-direction: column;
+        align-items: flex-start;
     }
     .schedule-text-container {
         padding-left: .5rem;
@@ -124,9 +153,9 @@
         display: none;
     }
 
-    .schedule-row2 {
+    /* .schedule-row2 {
         background-color: cornflowerblue;
-    }
+    } */
 }
 
 @media (max-width: 1020px) {
@@ -152,6 +181,16 @@
 }
 
 @media (max-width: 768px) {
+
+    .schedule-color-block {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .schedule-row2 {
+        flex-direction: row;
+        align-items: center;
+    }
     .schedule-row2 {
         margin-left: 6rem;
         background-color: #F3F0E8;
