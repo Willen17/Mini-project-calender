@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,13 +11,16 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./header.css">
     <link rel="stylesheet" href="./reusable.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="./side-nav.css">
     <link rel="stylesheet" href="./calendar.css">
     <script src="./get-date.js"></script>
     <script src="./main.js"></script>
     <script src="./side-nav.js"></script>
+    <script src="./calendar.js"></script>
 </head>
+
 <body>
     <header class="flex flex-column align-center justify-center">
         <div class="header-top">
@@ -38,21 +42,23 @@
 
     <main>
 
-        
+
 
         <nav id="aside-section" class="side-nav flex flex-column">
-                <div class="flex justify-between align-center nav-inner-div1">
-                    <div class="freezing-img-container">
-                        <img id="freezing-img" src="http://cdn.shopify.com/s/files/1/1061/1924/products/9_grande.png?v=1571606116" alt="Freezing emoji">
-                    </div>
-                    <div class="flex flex-column mr-05rem align-center">
-                        <p class="side-nav-shorttext">Vinter</p>
-                        <h2 id="side-nav-current-day">CURRENTDAY</h2>
-                        <p id="side-nav-current-date">CURRENTDATE</p>
-                    </div>
+            <div class="flex justify-between align-center nav-inner-div1">
+                <div class="freezing-img-container">
+                    <img id="freezing-img"
+                        src="http://cdn.shopify.com/s/files/1/1061/1924/products/9_grande.png?v=1571606116"
+                        alt="Freezing emoji">
                 </div>
+                <div class="flex flex-column mr-05rem align-center">
+                    <p class="side-nav-shorttext">Vinter</p>
+                    <h2 id="side-nav-current-day">CURRENTDAY</h2>
+                    <p id="side-nav-current-date">CURRENTDATE</p>
+                </div>
+            </div>
             <div class="nav-inner-div2">
-               <div>
+                <div>
                     <div class="flex align-center justify-between schedule-row1">
                         <div class="flex ml-05rem">
                             <i class="fas fa-briefcase"></i>
@@ -89,12 +95,12 @@
                             <p>08:00 till 15:00</p>
                         </div>
                     </div>
-               </div>
-               <div class="flex align-center justify-between schedule-row1">
-                   <div class="flex ml-05rem">
-                       <i class="fas fa-briefcase"></i>
-                       <h2>Lägg till helgdag</h2>
-                   </div>
+                </div>
+                <div class="flex align-center justify-between schedule-row1">
+                    <div class="flex ml-05rem">
+                        <i class="fas fa-briefcase"></i>
+                        <h2>Lägg till helgdag</h2>
+                    </div>
                     <i class="fas fa-plus-circle"></i>
                 </div>
                 <div class="flex align-center justify-between schedule-row1">
@@ -113,69 +119,143 @@
 
             <nav class="calendar-nav">
                 <div class="month">
-                <i style="position: absolute; left: 2rem; color: #F3F0E8;" class="fas fa-chevron-left"></i>
-                <p>December 2021</p>
-                <i style="position: absolute; right: 2rem; color: #F3F0E8;" class="fas fa-chevron-right"></i>
-            </div>
+                    <i style="position: absolute; left: 2rem; color: #F3F0E8;" class="fas fa-chevron-left"></i>
+                    <p>December 2021</p>
+                    <i style="position: absolute; right: 2rem; color: #F3F0E8;" class="fas fa-chevron-right"></i>
+                </div>
 
-            <div class="calendar-nav-days">
-                <span>Måndag</span>
-                <span>Tisdag</span>
-                <span>Onsdag</span>
-                <span>Torsdag</span>
-                <span>Fredag</span>
-                <span>Lördag</span>
-                <span>Söndag</span>
-            </div>
+                <div class="calendar-nav-days">
+                    <span>Måndag</span>
+                    <span>Tisdag</span>
+                    <span>Onsdag</span>
+                    <span>Torsdag</span>
+                    <span>Fredag</span>
+                    <span>Lördag</span>
+                    <span>Söndag</span>
+                </div>
             </nav>
 
 
 
-                <div class="grid-container">
+            <div class="grid-container btn-group">
 
-                    <div class="grid-item previous-month">29</div>
-                    <div class="grid-item previous-month">30</div>
-                    <div class="grid-item">1</div>
-                    <div class="grid-item">2</div>
-                    <div class="grid-item">3</div>
-                    <div class="grid-item">4</div>
-                    <div style="background-image:url(./assets/img/candle-2.png);" class="grid-item date-backgrounds">5</div>
-                    <div class="grid-item">6</div>
-                    <div class="grid-item">7</div>
-                    <div class="grid-item">8</div>
-                    <div class="grid-item">9</div>
-                    <div class="grid-item">10</div>
-                    <div class="grid-item">11</div>
-                    <div style="background-image:url(./assets/img/candle-3.png);" class="grid-item date-backgrounds">12</div>
-                    <div style="background-image: url(./assets/img/lucia.png);" class="grid-item date-backgrounds">13</div>
-                    <div class="grid-item">14</div>
-                    <div class="grid-item">15</div>
-                    <div class="grid-item">16</div>
-                    <div class="grid-item">17</div>
-                    <div class="grid-item">18</div>
-                    <div style="background-image:url(./assets/img/candle-4.png);" class="grid-item date-backgrounds">19</div>
-                    <div class="grid-item">20</div>
-                    <div class="grid-item">21</div>
-                    <div class="grid-item">22</div>
-                    <div class="grid-item">23</div>
-                    <div style="background-image: url(./assets/img/santa.png);" class="grid-item date-backgrounds">24</div>
-                    <div class="grid-item">25</div>
-                    <div class="grid-item">26</div>
-                    <div class="grid-item">27</div>
-                    <div class="grid-item">28</div>
-                    <div class="grid-item">29</div>
-                    <div class="grid-item">30</div>
-                    <div class="grid-item">31</div>
+                <div id="date-box-container">
 
-                    <div class="grid-item previous-month">1</div>
-                    <div class="grid-item previous-month">2</div>
-                  </div>
+                    <div class="date-box">
+
+                        <button onclick="hidebox()">X</button>
+
+                        <form>
+                            <label style="font-size: 40px;" id="title"></label><br>
+                            <label style="font-size: 40px;" for="lname">Beskrivning</label><br>
+                            <p type="text" id="description" name="fname"></p><br>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="grid-item previous-month">29</div>
+                <div class="grid-item previous-month">30</div>
+                <div class="grid-item">
+                    <button onclick="showbox()">1</button>
+                </div>
+                <div class="grid-item btn">
+                    <button onclick="showbox()">2</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">3</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">4</button>
+                </div>
+                <div style="background-image:url(./assets/img/candle-2.png);" class="grid-item date-backgrounds">          
+                    <button onclick="showbox()">5</button></div>
+                <div class="grid-item">
+                    <button onclick="showbox()">6</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">7</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">8</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">9</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">10</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">11</button>
+                </div>
+                <div style="background-image:url(./assets/img/candle-3.png);" class="grid-item date-backgrounds">
+                    <button onclick="showbox()">12</button>
+                </div>
+                <div style="background-image: url(./assets/img/lucia.png);" class="grid-item date-backgrounds">
+                    <button onclick="showbox()">13</button></div>
+                <div class="grid-item">
+                    <button onclick="showbox()">14</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">15</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">16</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">17</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">18</button>
+                </div>
+                <div style="background-image:url(./assets/img/candle-4.png);" class="grid-item date-backgrounds">
+                    <button onclick="showbox()">19</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">20</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">21</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">22</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">23</button>
+                </div>
+                <div style="background-image: url(./assets/img/santa.png);" class="grid-item date-backgrounds">
+                    <button onclick="showbox()">24</button></div>
+                <div class="grid-item">
+                    <button onclick="showbox()">25</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">26</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">27</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">28</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">29</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">30</button>
+                </div>
+                <div class="grid-item">
+                    <button onclick="showbox()">31</button>
+                </div>
+
+                <div class="grid-item previous-month">1</div>
+                <div class="grid-item previous-month">2</div>
             </div>
         </div>
-    
+        </div>
+
     </main>
 
     <footer></footer>
-    
+
 </body>
+
 </html>
