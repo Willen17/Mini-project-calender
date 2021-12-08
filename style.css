@@ -46,6 +46,7 @@ main{
 
     .side-nav {
         width: 100%;
+        display: unset;
     }
 
     main {
