@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="./side-nav.css">
     <link rel="stylesheet" href="./calendar.css">
+    <script src="./main.js"></script>
 </head>
 <body>
     <header class="flex flex-column align-center justify-center">
@@ -23,10 +24,10 @@
             <nav class="header-mobile-nav">
                 <ul class="flex gap1">
                     <li>
-                        <a href="#">Todo lista</a>
+                        <a id="todo-mobile-button" href="#">Todo lista</a>
                     </li>
                     <li>
-                        <a href="#">Kalendervy</a>
+                        <a id="calendar-mobile-button" href="#">Kalendervy</a>
                     </li>
                 </ul>
             </nav>
@@ -36,8 +37,9 @@
     <main>
 
         
-        <nav class="side-nav flex flex-column">
-                <div class="flex justify-around align-center nav-inner-div1">
+
+        <nav id="aside-section" class="side-nav flex flex-column">
+                <div class="flex justify-between align-center nav-inner-div1">
                     <div class="freezing-img-container">
                         <img id="freezing-img" src="http://cdn.shopify.com/s/files/1/1061/1924/products/9_grande.png?v=1571606116" alt="Freezing emoji">
                     </div>
@@ -83,7 +85,7 @@
 
 
 
-        <div class="calendar-container">
+        <div id="calendar-section" class="calendar-container">
 
             <nav class="calendar-nav">
                 <div class="month">
