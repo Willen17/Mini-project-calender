@@ -3,11 +3,6 @@
     margin-left: 1rem;
 }
 
-#snow-img {
-    width: 2rem;
-    padding-top: .5rem;
-}
-
 .nav-inner-div1 {
     margin: 1rem 1rem;
     background-color: #DFDEDE;
@@ -95,12 +90,12 @@
 }
 
 @media (max-width: 1365px) {
-    #freezing-img {
-        height: 4rem;
+    .nav-inner-div1 {
+        flex-direction: column;
     }
-    #snow-img {
-        padding-top: .2rem;
-        width: 1.2rem;
+
+    #freezing-img {
+        margin: 0;
     }
 
     .side-nav-shorttext {
@@ -118,12 +113,7 @@
 }
 
 @media (max-width: 1110px) {
-    #freezing-img {
-        height: 2rem;
-    }
-    #snow-img {
-        padding-top: 0;
-    }
+  
     .schedule-color-block {
         display: none;
     }
@@ -140,9 +130,7 @@
 }
 
 @media (max-width: 1020px) {
-    .freezing-img-container {
-        display: none;
-    }
+    
     .nav-inner-div1 {
         justify-content: center;
     }
