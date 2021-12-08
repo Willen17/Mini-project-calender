@@ -8,6 +8,10 @@
 .justify-end {justify-content: flex-end;}
 .text-center {text-align: center;}
 
+.gap1 {gap: 1rem;}
+.gap2 {gap: 2rem;}
+.gap3 {gap: 3rem;}
+
 .pr-1rem {padding-right: 1rem;}
 .pl-1rem {padding-left: 1rem;}
 .pt-1rem {padding-top: 1rem;}
