@@ -43,3 +43,30 @@ main{
     width: 75%;
     background-color: cornflowerblue;
 }
+
+@media (max-width: 768px) {
+    .calendar-container {
+        display: none;
+    }
+    .header-nav {
+        display: none;
+    }
+
+    .side-nav {
+        width: 100%;
+    }
+
+    main {
+        height: 90%;
+    }
+
+    header {
+        height: 10%;
+    }
+
+    .header-top {
+        height: 100%;
+    }
+
+
+}
