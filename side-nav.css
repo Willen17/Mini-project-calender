@@ -12,6 +12,7 @@
 
 .side-nav {
     flex-shrink: 3;
+    overflow: scroll;
 }
 
 .nav-inner-div2 {
@@ -22,7 +23,7 @@
     margin-right: 1rem;
     margin-left: 1rem;
     margin-bottom: 1rem;
-    height: 70%;
+    height: max-content;
 }
 
 .side-nav-shorttext {
@@ -167,12 +168,7 @@
     .schedule-row1 {
         height: 6rem;
     }
-    .side-nav {
-        overflow: scroll;
-    }
-    .nav-inner-div2 {
-        height: max-content;
-    }
+    
 }
 
 @media (max-width: 1365px) {
