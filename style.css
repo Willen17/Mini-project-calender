@@ -28,11 +28,10 @@ main{
 }
 
 .calendar-container{
-    margin-top: 1rem;
+    padding-top: 1rem;
     width: 75%;
     height: 100%;
     overflow: scroll;
-    background-color: cornflowerblue;
   }
 
 
