@@ -138,7 +138,7 @@
 
 @media (max-width: 900px) {
     .schedule-row2 {
-        display: none;
+        margin-left: 1.5rem;
     }
     .schedule-row1 {
         flex-direction: column;
@@ -151,20 +151,27 @@
     }
 }
 
-@media (max-width: 750px) {
-    .side-nav h2 {
-        font-size: .8rem;
+@media (max-width: 768px) {
+    .schedule-row2 {
+        margin-left: 6rem;
+        background-color: #F3F0E8;
     }
-}
 
-@media (max-width: 580px) {
+    .schedule-color-block {
+        display: unset;
+    }
+
     .nav-inner-div1 {
-        margin: 1rem 0;
+        flex-direction: row;
+        justify-content: space-around;
     }
-    .nav-inner-div2 {
-        margin: 1rem 0;
-    }
+
     .schedule-row1 {
-        margin: 1rem 0;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .fa-briefcase {
+        display: unset;
     }
 }
