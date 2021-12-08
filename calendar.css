@@ -1,22 +1,3 @@
-
-
-.month{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ff4646;
-  height: 4rem;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
-.month p{
-  color: #F3F0E8;
-  text-transform: uppercase;
-  font-size: 35px;
-}
-
 .grid-container {
   display: grid;
   width: 100%;
@@ -31,7 +12,7 @@
   justify-content: center;
   margin: 1rem;
   background-color: rgba(255, 255, 255, 0.8);
-  border: 10px solid rgb(215 215 215 / 80%);
+  border: 5px solid #DFDEDE;
   border-radius: 5px;
   padding: 20px;
   font-size: 30px;
@@ -41,7 +22,7 @@
 
 
 .date-backgrounds{
-  background-size: 5rem;
+  background-size: 6.5rem;
   background-repeat: no-repeat;
   background-position: bottom;
 }
@@ -55,18 +36,42 @@
 
 
 .calendar-nav{
-  width: 100%;
-  height: 30%;
-  background-color: #dfdede;
+  padding-top: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #F3F0E8;
+  
+}
+
+.month{
   display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff4646;
+  padding: .5rem;
+  border-radius: .5rem .5rem 0rem 0rem;
+}
+
+.month p{
+  color: #F3F0E8;
+  text-transform: uppercase;
+  font-size: 35px;
 }
 
 
 .calendar-nav-days {
-  width: 75%;
   display: flex;
-  justify-content: space-evenly;
+  padding: .5rem;
+  justify-content: space-around;
   align-items: center;
+  background-color: #ff4646;
+  border-radius: 0rem 0rem .5rem .5rem;
+}
+
+.calendar-nav-days span{
+  color: #F3F0E8;
+  font-size: 18px;
 }
 
 
