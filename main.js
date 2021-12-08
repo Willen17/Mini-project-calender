@@ -22,6 +22,8 @@ function addEventListeners() {
 
     const calendarMobileBtn = document.getElementById('calendar-mobile-button');
     calendarMobileBtn.addEventListener('click', showCalendarOnMobileDevice);
+
+    window.addEventListener('resize', resetWindow);
 }
 
 /**
@@ -66,5 +68,15 @@ function showCalendarOnMobileDevice() {
         calendarSection.style.width = '100%';
         calendarMobileBtn.style.color = 'black';
         isViewOnMobileDevices = 'todo';
+    }
+}
+
+function resetWindow() {
+    const asideSection = document.getElementById('aside-section');
+    const calendarSection = document.getElementById('calendar-section');
+
+    if(window.innerWidth > 768) {
+        asideSection.style.display = 'flex';
+        calendarSection.style.display = null;
     }
 }
