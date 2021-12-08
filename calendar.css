@@ -6,6 +6,7 @@
   background-color: #F3F0E8;
   padding: 10px;
 }
+
 .grid-item {
   display: flex;
   align-items: center;
@@ -19,32 +20,40 @@
   text-align: center;
 }
 
+.grid-item button {
+  font-size: 24px;
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
 
-.date-backgrounds{
+.date-backgrounds {
   background-size: 6.5rem;
   background-repeat: no-repeat;
   background-position: bottom;
 }
 
-.previous-month{
+.previous-month {
 
   background-color: #9b9b9b;
-  color:#d7d7d7;
-  filter: blur(1px);
+  color: #d7d7d7;
+
 }
 
 
-.calendar-nav{
+.calendar-nav {
   padding-top: 1rem;
   position: sticky;
   top: 0;
   z-index: 1;
   background-color: #F3F0E8;
-  
+
 }
 
-.month{
+.month {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,7 +62,7 @@
   border-radius: .5rem .5rem 0rem 0rem;
 }
 
-.month p{
+.month p {
   color: #F3F0E8;
   text-transform: uppercase;
   font-size: 35px;
@@ -69,21 +78,57 @@
   border-radius: 0rem 0rem .5rem .5rem;
 }
 
-.calendar-nav-days span{
+.calendar-nav-days span {
   color: #F3F0E8;
   font-size: 18px;
 }
 
 
-@media (max-width:1150px){
-  .grid-container{
+@media (max-width:1150px) {
+  .grid-container {
     height: 100%;
   }
 
-  .grid-item{
+  .grid-item {
     margin: 0.5rem;
     font-size: 15px;
     padding: 10px;
     border: 5px solid rgb(215 215 215 / 80%);
   }
+}
+
+
+#date-box-container {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 75%;
+  top: 12rem;
+  right: 0rem;
+  background-color: #00000094;
+}
+
+.date-box {
+  height: 70%;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F3F0E8;
+  border: 1rem solid #FE4646;
+  border-radius: 1rem;
+}
+
+.date-box button {
+  cursor: pointer;
+  position: absolute;
+  right: 15rem;
+  top: 10rem;
+  height: 3rem;
+  width: 3rem;
+  font-size: 3rem;
+  background: none;
+  border: none;
 }
