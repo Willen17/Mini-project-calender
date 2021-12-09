@@ -54,8 +54,9 @@
 .fa-briefcase {
     font-size: 1.5rem;
 }
-.fa-plus-circle {
+#add-todo {
     font-size: 1.5rem;
+    padding: 1rem;
     cursor: pointer;
 }
 
@@ -69,7 +70,7 @@
 .schedule-row2 {
     margin: 1rem 1rem;
     margin-left: 3rem;
-    height: 4rem;
+    height: max-content;
     background-color: #F3F0E8;
     border-radius: .2rem;
     cursor: pointer;
@@ -87,34 +88,13 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.schedule-input {
+#scheduleinput {
     margin: 1rem 1rem;
     background-color: #F3F0E8;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border-radius: .2rem;
     height: max-content;
-}
-
-#color-red {
-    background-color: crimson;
-    height: 2rem;
-    width: 2rem;
-    border-radius: 50%;
-    cursor: pointer;
-}
-#color-green {
-    background-color:lawngreen; 
-    height: 2rem;
-    width: 2rem;
-    border-radius: 50%;
-    cursor: pointer;
-}
-#color-blue {
-    background-color: cornflowerblue;
-    height: 2rem;
-    width: 2rem;
-    border-radius: 50%;
-    cursor: pointer;
+    display: none;
 }
 
 .button-submit-container {
@@ -161,10 +141,10 @@
     background-color: #9b9994;
 }
 
-.fa-plus-circle:hover {
+/* #add-todo:hover {
     transition: ease-in-out;
     color: #9b9994;
-}
+} */
 
 /* Mediaqueries */
 
@@ -189,9 +169,9 @@
         padding-bottom: .2rem;
     }
 
-    .schedule-row2 {
+    /* .schedule-row2 {
         height: 6rem;
-    }
+    } */
 
     .schedule-color-block {
         height: 1rem;
@@ -216,9 +196,6 @@
         display: none;
     }
 
-    /* .schedule-row2 {
-        background-color: cornflowerblue;
-    } */
 }
 
 @media (max-width: 1020px) {

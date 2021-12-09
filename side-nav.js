@@ -4,82 +4,59 @@ function main() {
     addEventListeners();
 }
 
-let colorRedIsActive = false;
-let colorGreenIsActive = false;
-let colorBlueIsActive = false;
-let calenderInputArray = [];
+let toDos = [];
+let isToDoElementOpen = false 
 
 function addEventListeners() {
-    document.getElementById('color-blue').addEventListener('click', colorActiveBlue);
-    document.getElementById('color-green').addEventListener('click', colorActiveGreen);
-    document.getElementById('color-red').addEventListener('click', colorActiveRed);
-    document.getElementById('schedule-button').addEventListener('click', getResultOfInput);
+    document.getElementById('add-todo').addEventListener('click', showToDoElement);
+    document.getElementById('scheduleinput').addEventListener('submit', createToDo);
 }
 
-function colorActiveRed() {
-
-    if(colorRedIsActive) {
-        document.getElementById('color-red').style.border = "0px solid #000000"
-        colorRedIsActive = false;
-    } else if (!colorRedIsActive) {
-        document.getElementById('color-red').style.border = "2px solid #000000"
-        colorRedIsActive = true;
-
-        document.getElementById('color-green').style.border = "0px solid #000000"
-        colorGreenIsActive = false;
-        document.getElementById('color-blue').style.border = "0px solid #000000"
-        colorBlueIsActive = false;
+function showToDoElement() {
+    const toDoElement = document.getElementById('scheduleinput');
+    if(!isToDoElementOpen) {
+        toDoElement.style.display = 'flex';
+        isToDoElementOpen = true
+    } else {
+        toDoElement.style.display = 'none';
+        isToDoElementOpen = false
     }
 }
 
-function colorActiveGreen() {
-    if(colorGreenIsActive) {
-        document.getElementById('color-green').style.border = "0px solid #000000"
-        colorGreenIsActive = false;
-    } else if (!colorGreenIsActive) {
-        document.getElementById('color-green').style.border = "2px solid #000000"
-        colorGreenIsActive = true;
+function createToDo(event) {
+    event.preventDefault();
 
-        document.getElementById('color-blue').style.border = "0px solid #000000"
-        colorBlueIsActive = false;
-        document.getElementById('color-red').style.border = "0px solid #000000"
-    }
+    const formData = new FormData(event.target);
+    const toDo = Object.fromEntries(formData);
+    toDos.push(toDo);
+    console.log(toDos);
+     // Till kalendern const filtertedToDos =  toDos.filter((toDo)=> toDo.date === 'yyyy-mm-dd')
+    // console.log(filtertedToDos);
+    renderToDo();
+    // Rendera om kalenderlistan och todo-listan
 }
 
-function colorActiveBlue() {
-    
-    if(colorBlueIsActive) {
-        document.getElementById('color-blue').style.border = "0px solid #000000"
-        colorBlueIsActive = false;
-    } else if (!colorBlueIsActive) {
-        document.getElementById('color-blue').style.border = "2px solid #000000"
-        colorBlueIsActive = true;
+function renderToDo() {
+    for(const item of toDos) {
+        const parentDiv = document.querySelector('.nav-inner-div2');
+        const testElement = document.createElement('div');
+        const testElement2 = document.createElement('div');
+        const colorElement = document.createElement('div');
+        const titleElement = document.createElement('p');
+        const descElement = document.createElement('p');
+        const timeElement = document.createElement('p');
 
-        document.getElementById('color-green').style.border = "0px solid #000000"
-        colorGreenIsActive = false;
-        document.getElementById('color-red').style.border = "0px solid #000000"
-        colorRedIsActive = false;
+        testElement.classList.add('schedule-row2', 'flex', 'align-center')
+        testElement2.classList.add('flex', 'flex-column', 'justify-center', 'schedule-text-container');
+        colorElement.classList.add('schedule-color-block');
+        titleElement.innerText = item.title;
+        descElement.innerText = item.description;
+        timeElement.innerText = item.date;
+        testElement.appendChild(colorElement);
+        testElement2.appendChild(titleElement);
+        testElement2.appendChild(descElement);
+        testElement2.appendChild(timeElement);
+        testElement.appendChild(testElement2);
+        parentDiv.appendChild(testElement);
     }
-}
-
-function getResultOfInput() {
-    let inputTitle = document.getElementById('input-title').value;
-    let inputDesc = document.getElementById('input-description').value;
-    let inputDate = document.getElementById('input-date').value;
-    let colorValue;
-
-    if (colorRedIsActive) {
-        colorValue = 'red';
-    }
-
-    if (colorGreenIsActive) {
-        colorValue = 'green';
-    }
-
-    if (colorBlueIsActive) {
-        colorValue = 'blue'
-    }
-
-    calenderInputArray.push('Title: ' + inputTitle, 'Desc: ' + inputDesc, 'Date: ' + inputDate, 'Color: ' + colorValue);
-    console.log(calenderInputArray);
 }
