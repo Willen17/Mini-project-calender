@@ -1,6 +1,5 @@
-window.addEventListener('load', main);
 
-function main(){
+function initCalendar(){
     //addEventListeners();
   }
 

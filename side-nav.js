@@ -1,6 +1,6 @@
-window.addEventListener('load', main);
 
-function main() {
+/**Starts the sideNavs functions */
+function initSideNav() {
     addEventListeners();
 }
 

@@ -1,4 +1,3 @@
-window.addEventListener('load', main);
 
 /**
  * State
@@ -9,7 +8,7 @@ let isViewOnMobileDevices = false;
  * When document has loaded main function will run
  * and in turn call other functions.
  */
-function main() {
+function initHeader() {
     addEventListeners();
 }
 
