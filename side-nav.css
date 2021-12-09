@@ -59,6 +59,12 @@
     cursor: pointer;
 }
 
+.remove-todo {
+    font-size: 1.2rem;
+    top: 30%;
+    left: 85%;
+}
+
 #side-nav-current-date {
     padding-bottom: .5rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;

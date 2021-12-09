@@ -9,6 +9,8 @@
 .align-center {align-items: center;}
 .justify-end {justify-content: flex-end;}
 .text-center {text-align: center;}
+.absolute {position: absolute;}
+.relative {position: relative;}
 
 .gap1 {gap: 1rem;}
 .gap2 {gap: 2rem;}
