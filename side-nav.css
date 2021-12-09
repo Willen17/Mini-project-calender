@@ -150,6 +150,10 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+#schedule-button {
+    padding: .5rem 1rem;
+}
+
 /* Hovers */
 
 .schedule-row2:hover {
