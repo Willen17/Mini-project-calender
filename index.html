@@ -57,58 +57,30 @@
                 </div>
             </div>
             <div class="nav-inner-div2">
-                <div>
-                    <div class="flex align-center justify-between schedule-row1">
-                        <div class="flex ml-05rem">
-                            <i class="fas fa-briefcase"></i>
-                            <h2>Schema för arbete</h2>
-                        </div>
-                        <i class="fas fa-plus-circle"></i>
-                    </div>
-                    <div class="schedule-input flex flex-column align-start" id="scheduleinput">
-                        <div class="pb-1rem pl-1rem pt-1rem">
-                            <h2>Fyll i för att skapa händelse</h2>
-                        </div>
-                        <div class="pb-1rem pl-1rem">
-                            <input id="input-title" type="text" placeholder="Skriv in titel">
-                        </div>
-                        <div class="pb-1rem pl-1rem">
-                            <textarea name="description" id="input-description" cols="30" rows="3" placeholder="Skriv in beskrivning"></textarea>
-                        </div>
-                        <div class="pb-1rem pl-1rem input-date-container">
-                            <input id="input-date" type="date">
-                        </div>
-                        <div class="flex color-input-container justify-evenly pb-1rem">
-                            <div id="color-blue"></div>
-                            <div id="color-green"></div>
-                            <div id="color-red"></div>
-                        </div>
-                        <div class="flex justify-end button-submit-container pb-1rem pr-1rem">
-                            <button>Skapa</button>
-                        </div>
-                    </div>
-                    <div class="schedule-row2 flex align-center">
-                        <div class="schedule-color-block"></div>
-                        <div class="flex flex-column justify-center schedule-text-container">
-                            <p>Social rättvisearbetare</p>
-                            <p>08:00 till 15:00</p>
-                        </div>
-                    </div>
-                </div>
                 <div class="flex align-center justify-between schedule-row1">
                     <div class="flex ml-05rem">
                         <i class="fas fa-briefcase"></i>
-                        <h2>Lägg till helgdag</h2>
+                        <h2>Mina händelser</h2>
                     </div>
-                    <i class="fas fa-plus-circle"></i>
+                    <div id="add-todo"><i class="fas fa-plus-circle"></i></div>
                 </div>
-                <div class="flex align-center justify-between schedule-row1">
-                    <div class="flex ml-05rem">
-                        <i class="fas fa-briefcase"></i>
-                        <h2>Lägg till evenemang</h2>
+                <form class="flex flex-column align-start" id="scheduleinput">
+                    <div class="pb-1rem pl-1rem pt-1rem">
+                        <h2>Fyll i för att skapa händelse</h2>
                     </div>
-                    <i class="fas fa-plus-circle"></i>
-                </div>
+                    <div class="pb-1rem pl-1rem">
+                        <input name="title" id="input-title" maxlength="23" type="text" placeholder="Skriv in titel">
+                    </div>
+                    <div class="pb-1rem pl-1rem">
+                        <textarea name="description" id="input-description" cols="30" rows="2" maxlength="63" placeholder="Skriv in beskrivning"></textarea>
+                    </div>
+                    <div class="pb-1rem pl-1rem input-date-container">
+                        <input name="date" id="input-date" type="date">
+                    </div>
+                    <div class="flex justify-end button-submit-container pb-1rem pr-1rem">
+                        <button id="schedule-button">Skapa</button>
+                    </div>
+                </form>
             </div>
         </nav>
 
