@@ -39,7 +39,9 @@ function createToDo(event) {
 }
 
 function renderToDo() {
+
     for(const item of toDos) {
+        if(item.isToDoDisplayed == undefined) {
         const parentDiv = document.querySelector('.nav-inner-div2');
         const testElement = document.createElement('div');
         const testElement2 = document.createElement('div');
@@ -60,5 +62,7 @@ function renderToDo() {
         testElement2.appendChild(timeElement);
         testElement.appendChild(testElement2);
         parentDiv.appendChild(testElement);
+        item.isToDoDisplayed = true;
+    } 
     }
 }
