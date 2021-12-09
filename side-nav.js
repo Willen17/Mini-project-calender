@@ -12,6 +12,7 @@ function addEventListeners() {
     document.getElementById('scheduleinput').addEventListener('submit', createToDo);
 }
 
+/**Displays the input-field. If the function is called and the input-field already is displayed, it hides it instead. */
 function showToDoElement() {
     const toDoElement = document.getElementById('scheduleinput');
     if(!isToDoElementOpen) {
@@ -25,6 +26,7 @@ function showToDoElement() {
 
 function createToDo(event) {
     event.preventDefault();
+    showToDoElement();
 
     const formData = new FormData(event.target);
     const toDo = Object.fromEntries(formData);
