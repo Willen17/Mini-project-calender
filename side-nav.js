@@ -34,15 +34,14 @@ function createToDo(event) {
     console.log(toDos);
      // Till kalendern const filtertedToDos =  toDos.filter((toDo)=> toDo.date === 'yyyy-mm-dd')
     // console.log(filtertedToDos);
-    renderToDo();
+    renderToDos();
     // Rendera om kalenderlistan och todo-listan
 }
 
-function renderToDo() {
-
+function renderToDos() {
+    const parentDiv = document.querySelector('#todos-container');
+    parentDiv.innerHTML = '';
     for(const item of toDos) {
-        if(item.isToDoDisplayed == undefined) {
-        const parentDiv = document.querySelector('.nav-inner-div2');
         const testElement = document.createElement('div');
         const crossElement = document.createElement('i');
         const testElement2 = document.createElement('div');
@@ -54,7 +53,8 @@ function renderToDo() {
         testElement.classList.add('schedule-row2', 'flex', 'align-center', 'relative', [item.title.replaceAll(' ','_')])
         testElement2.classList.add('flex', 'flex-column', 'justify-center', 'schedule-text-container');
         colorElement.classList.add('schedule-color-block');
-        crossElement.classList.add('fas', 'fa-times-circle', 'absolute', 'remove-todo', 'button' + item.date +'exit') //This has to be changed to item.title, since todos can have the same date.
+        crossElement.classList.add('fas', 'fa-times-circle', 'absolute', 'remove-todo'); 
+        crossElement.addEventListener('click',() => removeTodo(item))
         titleElement.innerText = item.title;
         descElement.innerText = item.description;
         timeElement.innerText = item.date;
@@ -65,31 +65,14 @@ function renderToDo() {
         testElement2.appendChild(timeElement);
         testElement.appendChild(testElement2);
         parentDiv.appendChild(testElement);
-        item.isToDoDisplayed = true;
-
-        document.querySelector(['.button' + item.date +'exit']).addEventListener('click', removeParentElement);
-    } 
     }
 }
 
-/**Scales down the class name of the element to match the date-format in the array. 
+/**Scales down the class name of the element to match the tile-format in the array. 
  * Also removes the parent element and everything it contains.
  */
-function removeParentElement(event) {
-        let className = event.target.classList[4].replaceAll('button', '',);
-        className = className.replaceAll('exit', '');
-        removeInArray(className);
-
-
-     event.currentTarget.parentNode.remove();
-}
-
-/**If the name of the class on cross-button element matches a date in the array, that object containing that date 
- * gets a new parameter called active.
-  */
-function removeInArray(className) {
-    for(let i = 0; i < toDos.length; i++) {
-        if(toDos[i].date == className)
-        toDos[i].active = false;
-    }
+function removeTodo(item) {
+    const index = toDos.indexOf(item);
+     toDos.splice(index, 1);
+     renderToDos();
 }
