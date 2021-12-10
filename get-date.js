@@ -1,6 +1,6 @@
-window.addEventListener('load', main);
 
-function main() {
+
+function initgetdate() {
     // addEventListeners();
     getTodaysDate();
     renderTodaysDate();

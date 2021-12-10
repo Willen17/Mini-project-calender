@@ -1,4 +1,4 @@
-window.addEventListener('load', main);
+
 
 /**
  * State
@@ -9,14 +9,14 @@ let isViewOnMobileDevices = false;
  * When document has loaded main function will run
  * and in turn call other functions.
  */
-function main() {
-    addEventListeners();
+function initheader() {
+    addheaderEventListeners();
 }
 
 /**
  * addEventListeners
  */
-function addEventListeners() {
+function addheaderEventListeners() {
     const todoMobileBtn = document.getElementById('todo-mobile-button');
     todoMobileBtn.addEventListener('click', showTodoListOnMobileDevice);
 
