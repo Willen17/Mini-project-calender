@@ -19,17 +19,34 @@ function getLocation() {
 function showPosition(position) {
     userCordinates.latitude = position.coords.latitude;
     userCordinates.longitude = position.coords.longitude;
-    console.log('https://api.openweathermap.org/data/2.5/onecall?lat='+ parseInt(userCordinates.latitude) +'&lon=' + parseInt(userCordinates.longitude) + '&units=metric&exclude=minutely,hourly,daily,alerts&appid=9cad7f8da0da8d85ed29aa07aa5a3591');
     fetchWeatherInfoForCurrentDay()
 }
 
 async function fetchWeatherInfoForCurrentDay() {
   try {
-      const response = await fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+ parseInt(userCordinates.latitude) +'&lon=' + parseInt(userCordinates.longitude) + '&units=metric&exclude=minutely,hourly,daily,alerts&appid=9cad7f8da0da8d85ed29aa07aa5a3591');
+      const response = await fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+ parseInt(userCordinates.latitude) +'&lon=' + parseInt(userCordinates.longitude) + '&units=metric&exclude=minutely,hourly,daily,alerts&lang=sv&appid=9cad7f8da0da8d85ed29aa07aa5a3591');
       const data = await response.json();
       console.log(data);
+      renderWeather(data);
       // renderAllHolidays(data);
   } catch (error) {
       console.error(error);
   }
+}
+
+function renderWeather(data) {
+  let temperature = data.current.temp;
+  let weather = data.current.weather[0].description;
+  console.log(temperature + weather);
+
+  temperatureElement = document.createElement('p');
+  weatherElement = document.createElement('p');
+  temperatureElement.innerText = temperature + ' °C';
+  weatherElement.innerText = weather;
+
+  weatherElement.classList.add('side-nav-shorttext');
+  temperatureElement.classList.add('side-nav-shorttext');
+
+  document.getElementById('currentday-info').appendChild(weatherElement);
+  document.getElementById('currentday-info').appendChild(temperatureElement);
 }
