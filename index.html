@@ -15,11 +15,13 @@
     <link rel="stylesheet" href="./side-nav.css">
     <link rel="stylesheet" href="./calendar.css">
     <link rel="stylesheet" href="./newcalendar.css">
+    <link rel="stylesheet" href="./cookies.css">
     <script src="./get-date.js"></script>
     <script src="./side-nav.js"></script>
     <script src="./calendar.js"></script>
     <script src="./main.js"></script>
     <script src="./header.js"></script>
+    <script src="./get-position.js"></script>
 </head>
 
 <body>
@@ -42,7 +44,14 @@
     </header>
 
     <main>
-
+        <div class="absolute flex justify-between align-center pr-1rem pl-1rem cookies-popup">
+            <div>
+                <p>Denna sidan använder cookies.</p>
+            </div>
+            <div>
+                <button id="location-button">Godkänn</button>
+            </div>
+        </div>
 
 
         <nav id="aside-section" class="side-nav flex flex-column">

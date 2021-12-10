@@ -1,0 +1,24 @@
+.cookies-popup {
+    left: calc(50% - 15rem);
+    bottom: calc(10% - 3rem);
+    animation: cookie-popup 2s ease-in-out;
+
+
+    width: 30%;
+    height: 6rem;
+    background-color: #FF4646;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 5px 5px 9px 1px rgba(0,0,0,0.61);
+    border-radius: 1rem;
+    z-index: 10;
+}
+
+@keyframes cookie-popup{
+    0% {
+        bottom: calc(-30% - 3rem);
+    }
+    100%{
+        bottom: calc(10% - 3rem);
+    }
+}
