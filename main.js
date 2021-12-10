@@ -1,6 +1,9 @@
 window.addEventListener('load', main);
 
 function main() {
-    addEventListeners();
+
+    initgetdate();
+    initheader();
+    initsidenav();
     initcalendar();
 }
