@@ -1,74 +1,89 @@
 function initcalendar(){
 
-    const calendar = document.querySelector("#app-calendar");
-    const numberboxes = document.querySelector("#numberboxes");
     
-    
-    const isWeekend = day => {
-        // 6 när det är lördag, 0 när det är söndag
-    return day % 7 == 0;
+
+
+const date = new Date();
+
+const renderCalendar = () => {
+  date.setDate(1);
+
+  const monthDays = document.querySelector(".days");
+
+  const lastDay = new Date(
+    date.getFullYear(),
+    date.getMonth() + 1,
+    0
+  ).getDate();
+
+  const prevLastDay = new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    0
+  ).getDate();
+
+  const firstDayIndex = date.getDay();
+
+  const lastDayIndex = new Date(
+    date.getFullYear(),
+    date.getMonth() + 1,
+    0
+  ).getDay();
+
+  const nextDays = 7 - lastDayIndex - 1;
+
+  const months = ["Januari",
+  "Februari",
+  "Mars",
+  "April",
+  "Maj",
+  "Juni",
+  "Juli",
+  "Augusti",
+  "September",
+  "Oktober",
+  "November",
+  "December",
+];
+
+ document.getElementById('today').innerText = dateArray[0] + ' ' + dateArray[1] + ' ' + dateArray[2] + ' ' + dateArray[3]
+
+  document.querySelector(".date h1").innerHTML = months[date.getMonth()];
+
+
+  let days = "";
+
+  for (let x = firstDayIndex; x > 0; x--) {
+    days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
+  }
+
+  for (let i = 1; i <= lastDay; i++) {
+    if (
+      i === new Date().getDate() &&
+      date.getMonth() === new Date().getMonth()
+    ) {
+      days += `<div class="today">${i}</div>`;
+    } else {
+      days += `<div>${i}</div>`;
     }
-    
-    
-    
-    
-    // 1. första dagen i månaden
-    // 2. hur många dagar är det i månaden
-    for (let day = 1; day < 31; day ++) {
-    
-    //
-    const getDayName = day => {
-        const date = new Date(Date.UTC(2018, 0, day));
-    
-       return new Intl.DateTimeFormat("en-US", {weekday:
-         "short" })
-        .format(date);
-    }
-    
-      
-        
-        const weekend = isWeekend(day);
-    
-       
-    
-        // let cell2 = "";
-        // if (day < 7) {
-             const dayName = getDayName(day);
-        // }
-    
-    
-    
-    const cell = document.createElement("div");
-    
-    cell.className = `day ${weekend ? "weekend" : ""}`;
-    cell.innerHTML= day; cell;
-    calendar.append(cell);
-    
-    
-    
-    const cell2 = document.createElement("div");
-    cell2.innerHTML= dayName;
-    cell.appendChild(cell2);
-    
-    console.log(dayName, day)
-    
-    
-    }
-    
-    
-    document.querySelectorAll("#app-calendar .day").forEach
-    (day => {
-     day.addEventListener("click", event => {
-         event.currentTarget.classList.toggle("selected");
-     });
-    });
-    
-    
-    
-    }
-    
-    
-    
-    // var date = new Date();
-    // var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
-    // var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+  }
+
+  for (let j = 1; j <= nextDays; j++) {
+    days += `<div class="next-date">${j}</div>`;
+    monthDays.innerHTML = days;
+  }
+};
+
+document.querySelector(".prev").addEventListener("click", () => {
+  date.setMonth(date.getMonth() - 1);
+  renderCalendar();
+});
+
+document.querySelector(".next").addEventListener("click", () => {
+  date.setMonth(date.getMonth() + 1);
+  renderCalendar();
+});
+
+renderCalendar();
+
+}

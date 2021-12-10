@@ -1,21 +1,82 @@
-:root {
-    --light-gray: #DADCE0;
-    --light-blue: #1B9CE2;
+
+
+html{
+    font-size: 62.5%;
 }
 
-body{
-    margin: 0;
-}
-
-#app-calendar{
-    display: grid;
-    grid-template-columns: repeat(7, auto);
-    grid-template-rows: repeat(5, auto);
+.calendar-container2{
     width: 100%;
-    height: 120%;
+    height: 100%;
+
+    color: #F3F0E8;
+
 }
 
-.day{
+.calendar{
+    width: 100%;
+    height: 100%;
+    background-color: #F3F0E8;
+
+}
+
+.month{
+    width: 100%;
+    height: 12rem;
+    background-color: #ff4646;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    text-align: center;
+
+}
+
+.month i{
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.date h1{
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    margin-bottom: 1rem;
+}
+
+.month p{
+    background-color: rgba(0, 0, 0, 0.174);
+    font-size: 1.6rem;
+}
+
+.weekdays{
+    color: #ff4646;
+    width: 100%;
+    height: 5rem;
+    padding: 0 .4rem;
+    display: flex;
+    align-items: center;
+}
+
+.weekdays div{
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: .1rem;
+    width: calc(44.2rem/7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.days{
+    color: #ff4646;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: .2rem;
+}
+
+.days div{
     border: 5px solid #DFDEDE;
     border-radius: 5px;
     text-align: center;
@@ -26,26 +87,28 @@ body{
     transition: background-color 200ms, color 200ms;
 }
 
-.name{
-    padding-bottom: 5px;
+
+.days div:hover:not(.today){
+    background-color: #ff4646;;
+    border: .2rem solid rgb(186, 186, 186);
+    color: #F3F0E8;
+    cursor: pointer;
 }
 
-.weekend{
-    color: red;
+.prev-date,
+.next-date{
+    opacity: 0.5;
 }
 
-.selected {
-    background-color: cornflowerblue;
-    color: white;
+.today{
+    background-color: #ff4646;
+    color: #F3F0E8;
 }
 
-@media (max-width:1230px) {
-
-  
-    .day {
-      margin: 0.5rem;
-      font-size: 15px;
-      padding: 10px;
-      border: 5px solid rgb(215 215 215 / 80%);
-    }
-  }
+#app-calendar{
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    grid-template-rows: repeat(5, auto);
+    width: 100%;
+    height: 120%;
+}
