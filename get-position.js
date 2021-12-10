@@ -1,7 +1,11 @@
 
 function initGetPosition() {
-    getLocation();
+    addGetPositionEventlisteners();
 }
+let userCordinates = {latitude:'', longitude:''};
+
+function addGetPositionEventlisteners() {
+    document.getElementById('location-button').addEventListener('click', getLocation);    }
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -9,9 +13,10 @@ function getLocation() {
   } else { 
     document.getElementById("cordinates").innerHTML = "Geolocation is not supported by this browser.";
   }
+  document.getElementById('cookie-popup').classList.toggle('cookies-popdown');
 }
 
 function showPosition(position) {
-    document.getElementById("cordinates").innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
+    userCordinates.latitude = position.coords.latitude;
+    userCordinates.longitude = position.coords.longitude;
 }
