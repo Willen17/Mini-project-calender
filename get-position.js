@@ -39,14 +39,17 @@ function renderWeather(data) {
   let weather = data.current.weather[0].description;
   console.log(temperature + weather);
 
+  temperature = temperature.toString().substring(0, 1);
+
   temperatureElement = document.createElement('p');
   weatherElement = document.createElement('p');
   temperatureElement.innerText = temperature + ' °C';
   weatherElement.innerText = weather;
 
-  weatherElement.classList.add('side-nav-shorttext');
-  temperatureElement.classList.add('side-nav-shorttext');
+  weatherElement.classList.add('side-nav-weathertext');
+  temperatureElement.classList.add('side-nav-weathertext');
 
   document.getElementById('currentday-info').appendChild(weatherElement);
   document.getElementById('currentday-info').appendChild(temperatureElement);
+
 }

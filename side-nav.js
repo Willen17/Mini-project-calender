@@ -68,8 +68,8 @@ function renderToDos() {
     }
 }
 
-/**Scales down the class name of the element to match the tile-format in the array. 
- * Also removes the parent element and everything it contains.
+/**
+ *
  */
 function removeTodo(item) {
     const index = toDos.indexOf(item);
