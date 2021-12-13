@@ -35,6 +35,7 @@ function createToDo(event) {
      // Till kalendern const filtertedToDos =  toDos.filter((toDo)=> toDo.date === 'yyyy-mm-dd')
     // console.log(filtertedToDos);
     renderToDos();
+    event.target.reset();
     // Rendera om kalenderlistan och todo-listan
 }
 
@@ -74,5 +75,6 @@ function renderToDos() {
 function removeTodo(item) {
     const index = toDos.indexOf(item);
      toDos.splice(index, 1);
+     
      renderToDos();
 }
