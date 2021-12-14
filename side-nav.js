@@ -29,13 +29,14 @@ function createToDo(event) {
     showToDoElement();
 
     const formData = new FormData(event.target);
+ 
     const toDo = Object.fromEntries(formData);
     toDos.push(toDo);
     console.log(toDos);
-     // Till kalendern const filtertedToDos =  toDos.filter((toDo)=> toDo.date === 'yyyy-mm-dd')
-    // console.log(filtertedToDos);
     renderToDos();
     event.target.reset();
+    initcalendar();
+   
     // Rendera om kalenderlistan och todo-listan
 }
 
