@@ -5,11 +5,13 @@ function initcalendar(){
 //fetch timezone (date)
 const date = new Date();
 
+/**Sets starting index for date to 1 */
 const renderCalendar = () => {
   date.setDate(1);
 
   // days of the current month
   const daysMonthContainer = document.querySelector(".days-container");
+
 
   /** last day in month. for example the 29th, 30th or 31th */
   const lastDayOfMonth = new Date(
@@ -18,21 +20,14 @@ const renderCalendar = () => {
     0
   ).getDate();
 
-// fetches last days in prev months. Use this to add fx later
-  const prevLastDay = new Date(
-    date.getFullYear(),
-    date.getMonth(),
-    0
-  ).getDate();
 
-  // fetches indexnumber of the first day of upcoming month
+// fetches last days in prev months. Use this to add fx later
+  const prevLastDay = new Date(date.getFullYear(), date.getMonth(), 0).getDate();
+
+  /**fetches indexnumber of the first day of upcoming month */ 
   const firstDayIndex = date.getDay();
 
-  const lastDayIndex = new Date(
-    date.getFullYear(),
-    date.getMonth() + 1,
-    0
-  ).getDay();
+  const lastDayIndex = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDay();
 
   // amount of visable days from upcoming month
   const nextDays = 7 - lastDayIndex - 1;
@@ -65,8 +60,10 @@ document.querySelector(".date h1").innerHTML = months[date.getMonth()];
     days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
   }
 
-// Colorizes current date
+
+// Colorizes current date, and adds number to all dates.
   for (let i = 1; i <= lastDayOfMonth; i++) {
+
 
     if ( //if number = today add backgroundcolor
       i === new Date().getDate() &&
@@ -77,6 +74,7 @@ document.querySelector(".date h1").innerHTML = months[date.getMonth()];
       days += `<div>${i}</div>`;
     }
   }
+
 
 // Adds opacity-filter to visable days from upcoming month
   for (let j = 1; j <= nextDays; j++) {
@@ -94,7 +92,7 @@ document.querySelector(".prev").addEventListener("click", () => {
   renderCalendar();
 });
 
-// Change to previous month
+// Change to next month
 document.querySelector(".next").addEventListener("click", () => {
     // currentmonth + 1
   date.setMonth(date.getMonth() + 1);

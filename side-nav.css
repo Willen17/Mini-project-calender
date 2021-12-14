@@ -32,6 +32,11 @@
     color:  black;
 }
 
+.side-nav-weathertext {
+    font-size: 1rem;
+    color: black;
+}
+
 #side-nav-current-day {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: black;
