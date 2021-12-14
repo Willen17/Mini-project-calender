@@ -9,12 +9,13 @@ const renderCalendar = () => {
   date.setDate(1);
 
   // days of the current month
-  const monthDays = document.querySelector(".days");
+  const daysMonthContainer = document.querySelector(".days-container");
 
-  // fetches last day in month. for example 29 days, 30 days or 31 days
-  const lastDay = new Date(
+  /** last day in month. for example the 29th, 30th or 31th */
+  const lastDayOfMonth = new Date(
     date.getFullYear(),
-    date.getMonth() + 1,0
+    date.getMonth() + 1,
+    0
   ).getDate();
 
 // fetches last days in prev months. Use this to add fx later
@@ -65,7 +66,7 @@ document.querySelector(".date h1").innerHTML = months[date.getMonth()];
   }
 
 // Colorizes current date
-  for (let i = 1; i <= lastDay; i++) {
+  for (let i = 1; i <= lastDayOfMonth; i++) {
 
     if ( //if number = today add backgroundcolor
       i === new Date().getDate() &&
@@ -80,7 +81,7 @@ document.querySelector(".date h1").innerHTML = months[date.getMonth()];
 // Adds opacity-filter to visable days from upcoming month
   for (let j = 1; j <= nextDays; j++) {
     days += `<div class="next-date">${j}</div>`;
-    monthDays.innerHTML = days;
+    daysMonthContainer.innerHTML = days;
   }
 };
 
