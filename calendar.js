@@ -67,7 +67,6 @@ document.querySelector(".date h1").innerHTML = months[date.getMonth()];
 /** Colorizes current date, and adds number to all dates. */
   for (let i = 1; i <= lastDayOfMonth; i++) {
 
-
     if ( //If I is the same as todays date and, the month is the same as current month.
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
@@ -83,12 +82,35 @@ document.querySelector(".date h1").innerHTML = months[date.getMonth()];
       const checkMonth = date.getMonth();
       const currentLoopDate = new Date(checkYear, checkMonth, i);
   
-      const toDosFOrCurrentLoopDay =  toDos.filter((toDo)=> {
+      const toDosForCurrentLoopDay =  toDos.filter((toDo)=> {
         const toDoDate = new Date(toDo.date);
-        return areDatesMatching(currentLoopDate, toDoDate); // Googla how to check if two date are same
+        
+        let isPoopTrue = false;
+        
+        plzWork(currentLoopDate, toDoDate);
+
+      function plzWork (currentLoopDate, toDoDate) {
+          if(currentLoopDate.toDateString() === toDoDate.toDateString()) {
+            console.log('peepee poopoo', 'is so supertrue')
+            isPoopTrue = true;
+            if(document.querySelectorAll('.div').innerText === i) {
+                
+            }
+  
+            
+            days += `<div>${i}<p class="text-in-datebox">${toDoDate + toDo.title + toDo.description}</p></div>`
+          }
+          }
+    
+        
+
+        
+
+        // return areDatesMatching(currentLoopDate, toDoDate); // Googla how to check if two date are same
       }); 
     
   }
+
 
   
 
