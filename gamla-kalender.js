@@ -1,3 +1,6 @@
+// Detta är kalendern vi hade innan vi fick det att fungera för todos att dyka upp i kalendern.
+
+
 function initcalendar(){
 
   
