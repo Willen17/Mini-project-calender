@@ -41,9 +41,8 @@
     letter-spacing: .2rem;
     margin-bottom: 1rem;
 }
-
-.month p{
-    background-color: rgba(0, 0, 0, 0.174);
+#today{
+    color: #F3F0E8;
     font-size: 1.6rem;
 }
 
@@ -76,8 +75,18 @@
     height: 100%;
 }
 
+.today{
+    text-align: center;
+    padding: 20px;
+    margin: 1%;
+    font-size: 30px;
+    cursor: pointer;
+    color: #F3F0E8;
+    border: 10px ridge #e1e1e1;
+    background-color: #ff4646;
+}
 
-.days-container div{
+.days{
     border: 5px solid #DFDEDE;
     border-radius: 5px;
     text-align: center;
@@ -85,26 +94,19 @@
     margin: 1%;
     font-size: 30px;
     cursor: pointer;
-    transition: background-color 200ms, color 200ms;
+
 }
 
 
-.days-container div:hover:not(.today){
-    background-color: #ff4646;;
- 
-    color: #F3F0E8;
-    cursor: pointer;
-}
+
 
 .prev-date,
 .next-date{
     opacity: 0.5;
 }
 
-.today{
-    background-color: #ff4646;
-    color: #F3F0E8;
-}
+
+
 
 .text-in-datebox {
     font-size: .5rem;
