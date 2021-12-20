@@ -39,7 +39,9 @@ function renderWeather(data) {
   let weather = data.current.weather[0].description;
   console.log(temperature + weather);
 
-  temperature = temperature.toString().substring(0, 1);
+  if(temperature.toString().includes('-')) {
+    temperature = temperature.toString().substring(0, 2);
+  } else if (!temperature.toString().includes('-')) {temperature = temperature.toString().substring(0, 1);}
 
   temperatureElement = document.createElement('p');
   weatherElement = document.createElement('p');

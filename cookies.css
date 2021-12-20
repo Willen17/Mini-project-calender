@@ -1,5 +1,5 @@
 .cookies-popup {
-    left: calc(50% - 15rem);
+    left: calc(50% - 10%);
     bottom: calc(10% - 3rem);
     animation: cookie-popup 2s ease-in-out;
 
@@ -34,3 +34,19 @@
         bottom: calc(10% - 3rem);
     }
 }
+
+@media (max-width: 730px) {
+    .cookies-popup {
+        width: 50%;
+        left: calc(50% - 25%);
+
+    }
+}
+
+@media (max-width: 430px) {
+    .cookies-popup {
+        width: 70%;
+        left: calc(50% - 35%);
+    }
+}
+
