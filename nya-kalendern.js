@@ -55,7 +55,11 @@ const amountOfDaysToDisplayFromNextMonth = 7 - IndexOfFirstDaysOfNextMonth + 1;
 /** Visar pågående månads namn i headern */
 function displayCurrentMonth() {
     document.querySelector(".date h1").innerHTML = monthNameSwedish[month];
+        /** Visar pågående år i headern */
+        document.getElementById('today').innerText = dateArray[3]
 }
+
+
 
 
 /** Lägg till divar med datum i kalendercontainern */
@@ -74,7 +78,10 @@ function addDaysToGrid() {
         displayDate.innerText = `${lastDaysOfPreviousMonth - previousDays + 1}`;
 
         calendarContent.appendChild(dayBoxes);
+
     }
+
+
 
 
     // Lägger till divar ut efter antalet dagar i vald månad inuti calendar-content-diven & ger dem innehåll, id & class
@@ -89,6 +96,14 @@ function addDaysToGrid() {
 
 
         calendarContent.appendChild(dayBoxes);
+
+        if ( //If days är samma som dagens datum, lägg till bakgrundsfärg för att identifiera dagens datum.
+            days === new Date().getDate() &&
+            date.getMonth() === new Date().getMonth()
+          ) {
+            dayBoxes.classList.add('today');
+            dayBoxes.classList.remove('days')
+          }
     }
 
     // If (sista datum i månaden är en lördag (6) = Lägg endast ut FÖRSTA DAGEN I NÄSTA MÅNAD-div istället för ++)
