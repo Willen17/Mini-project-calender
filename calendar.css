@@ -93,6 +93,7 @@
     color: #F3F0E8;
     border: 10px ridge #e1e1e1;
     background-color: #ff4646;
+    position: relative;
 }
 
 .days{
@@ -103,6 +104,7 @@
     margin: 1%;
     font-size: 30px;
     cursor: pointer;
+    position: relative;
 
 }
 
@@ -119,4 +121,21 @@
 
 .text-in-datebox {
     font-size: .5rem;
+}
+
+
+
+
+.notification{
+    
+    background: #6495EC;
+    color: #F3F0E8;
+    border-radius: 50%;
+    position: absolute;
+    height: 2rem;
+    font-size: 1.5rem;
+    width: 2rem;
+    bottom: 0.2rem;
+    right: 0.2rem;
+
 }

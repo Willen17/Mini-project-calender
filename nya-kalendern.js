@@ -117,6 +117,7 @@ function addDaysToGrid() {
 
         if (toDosForCurrentLoopDay.length > 0) {
             const textInsideDateBox = document.createElement('p')
+            textInsideDateBox.className = 'notification';
             textInsideDateBox.innerText = toDosForCurrentLoopDay.length;
             dayBoxes.append(textInsideDateBox);
         }
