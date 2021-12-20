@@ -55,8 +55,8 @@ const amountOfDaysToDisplayFromNextMonth = 7 - IndexOfFirstDaysOfNextMonth + 1;
 /** Visar pågående månads namn i headern */
 function displayCurrentMonth() {
     document.querySelector(".date h1").innerHTML = monthNameSwedish[month];
-        /** Visar pågående år i headern */
-        document.getElementById('today').innerText = dateArray[3]
+    /** Visar pågående år i headern */
+    document.getElementById('today').innerText = dateArray[3]
 }
 
 
@@ -66,6 +66,7 @@ function displayCurrentMonth() {
 function addDaysToGrid() {
     // Hämtar ut div elementet från Html
     const calendarContent = document.querySelector('.days-container');
+    calendarContent.innerHTML = '';
 
     /**Renderar sista dagarna av förra månaden  */
     for (let previousDays = IndexOflastDaysOfPreviousMonth; previousDays > 0; previousDays--) {
@@ -100,31 +101,49 @@ function addDaysToGrid() {
         if ( //If days är samma som dagens datum, lägg till bakgrundsfärg för att identifiera dagens datum.
             days === new Date().getDate() &&
             date.getMonth() === new Date().getMonth()
-          ) {
+        ) {
             dayBoxes.classList.add('today');
             dayBoxes.classList.remove('days')
-          }
+        }
+
+        const checkYear = dateObject.getFullYear();
+        const checkMonth = dateObject.getMonth();
+        const currentLoopDate = new Date(checkYear, checkMonth, days); //datumet för det datum vi loopar just nu
+
+        const toDosForCurrentLoopDay = toDos.filter((toDo) => { //tar alla våra todos och filtrerar, kollar om varje todos matchar med currentloopdate
+            const toDoDate = new Date(toDo.date);
+            return areDatesMatching(currentLoopDate, toDoDate); // Googla how to check if two date are same
+        });
+
+        if (toDosForCurrentLoopDay.length > 0) {
+            const textInsideDateBox = document.createElement('p')
+            textInsideDateBox.innerText = toDosForCurrentLoopDay.length;
+            dayBoxes.append(textInsideDateBox);
+        }
+
+        calendarContent.append(dayBoxes);
     }
 
     // If (sista datum i månaden är en lördag (6) = Lägg endast ut FÖRSTA DAGEN I NÄSTA MÅNAD-div istället för ++)
 
-    const testnumbers = 7-((IndexOflastDaysOfPreviousMonth + daysOfMonths)%7);
+    const testnumbers = 7 - ((IndexOflastDaysOfPreviousMonth + daysOfMonths) % 7);
     console.log(testnumbers)
     /**Renderar första dagarna av nästkommande månad */
     for (let nextDays = 1; nextDays <= testnumbers; nextDays++) {
 
 
-            let dayBoxes = document.createElement('div');
-            dayBoxes.className = "days";
-            dayBoxes.style.opacity = '50%';
+        let dayBoxes = document.createElement('div');
+        dayBoxes.className = "days";
+        dayBoxes.style.opacity = '50%';
 
-            let displayDate = document.createElement('p');
-            dayBoxes.append(displayDate);
-            displayDate.innerText = `${nextDays}`;
+        let displayDate = document.createElement('p');
+        dayBoxes.append(displayDate);
+        displayDate.innerText = `${nextDays}`;
 
-            calendarContent.appendChild(dayBoxes);        }
-
+        calendarContent.appendChild(dayBoxes);
     }
+
+}
 
 
 function displayPrevMonth() {
@@ -146,3 +165,7 @@ function displayNextMonth() {
     document.querySelector(".date h1").innerHTML = monthNameSwedish[month];
 
 }
+
+function areDatesMatching(date1, date2) { // kollar om datumen matchar
+    return  date1.getFullYear() === date2.getFullYear() && date1.getMonth() === date2.getMonth() && date1.getDate() === date2.getDate();
+  }

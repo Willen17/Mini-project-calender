@@ -35,7 +35,7 @@ function createToDo(event) {
     console.log(toDos);
     renderToDos();
     event.target.reset();
-    initcalendar();
+    initCalendar2();
    
     // Rendera om kalenderlistan och todo-listan
 }
@@ -78,4 +78,5 @@ function removeTodo(item) {
      toDos.splice(index, 1);
      
      renderToDos();
+     initCalendar2();
 }
