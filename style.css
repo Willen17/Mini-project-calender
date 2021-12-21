@@ -40,7 +40,7 @@ main{
 
 
 @media (max-width: 768px) {
-    .calendar-container {
+    .calendar-section {
         display: none;
     }
     .header-nav {
