@@ -29,7 +29,7 @@ main{
     background-color: #F3F0E8;
 }
 
-.calendar-container{
+.calendar-section{
     width: 75%;
     height: 100%;
     overflow-y: scroll;

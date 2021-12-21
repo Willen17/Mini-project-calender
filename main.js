@@ -6,6 +6,6 @@ function main() {
     initGetPosition();
     initheader();
     initsidenav();
-    initCalendar2();
-    // initcalendar();
+    initCalendar();
+
 }
