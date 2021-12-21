@@ -54,4 +54,23 @@ function renderWeather(data) {
   document.getElementById('currentday-info').appendChild(weatherElement);
   document.getElementById('currentday-info').appendChild(temperatureElement);
 
+  const emojiElement = document.getElementById('freezing-img');
+
+  if(temperature < 5 && temperature > 0) {
+    emojiElement.innerText = '😬'
+  }
+
+  if(temperature < 10 && temperature > 5) {
+    emojiElement.innerText = '😐'
+  }
+  if(temperature < 15 && temperature > 10) {
+    emojiElement.innerText = '🙂'
+  }
+  if(temperature < 20 && temperature > 15) {
+    emojiElement.innerText = '😍'
+  }
+  if(temperature > 20) {
+    emojiElement.innerText = '🥵'
+  }
+  
 }

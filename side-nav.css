@@ -169,7 +169,9 @@
     .nav-inner-div1 {
         flex-direction: column;
         height: 40%;
+        justify-content: center;
     }
+   
 
     #freezing-img {
         margin: 0;
@@ -208,12 +210,8 @@
 
 }
 
-@media (max-width: 1020px) {
-    
-    .nav-inner-div1 {
-        justify-content: center;
-    }
-}
+
+
 
 @media (max-width: 900px) {
     .schedule-row2 {
