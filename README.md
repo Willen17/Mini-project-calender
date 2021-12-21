@@ -10,10 +10,10 @@ Kalendersidan består av en titel och ett välkomstsegment där användaren kan 
 
 ### Krav för betyg G:
 
-- [x] Skapa layouten enligt skiss (dölj kalender på mobilvy) - (G) <br>
-- [x] Skapa och designa titeln för verktyget - (G) <br>
-- [x] Skapa och designa välkomstsegmentet (delen ovanför todo-listan). Segmentet skall minst innehålla tid, veckodag och datum. - (G) <br>
-- [x] Användaren skall kunna lägga till en todo - (G) <br>
-- [x] Användaren skall kunna ta bort en todo - (G) <br>
-- [x] Skapa och designa kalendervyn med en månadsvy över aktuell månad - (G) <br>
-- [x] Skapade todos skall kopplas till kalender och visas med en siffra som representeras antal todos på en viss dag. - (G) <br>
+- [x] Skapa layouten enligt skiss (dölj kalender på mobilvy) <br>
+- [x] Skapa och designa titeln för verktyget <br>
+- [x] Skapa och designa välkomstsegmentet (delen ovanför todo-listan). Segmentet skall minst innehålla tid, veckodag och datum. <br>
+- [x] Användaren skall kunna lägga till en todo <br>
+- [x] Användaren skall kunna ta bort en todo <br>
+- [x] Skapa och designa kalendervyn med en månadsvy över aktuell månad <br>
+- [x] Skapade todos skall kopplas till kalender och visas med en siffra som representeras antal todos på en viss dag.<br>
