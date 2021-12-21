@@ -116,7 +116,7 @@ function addDaysToGrid() {
         });
 
         if (toDosForCurrentLoopDay.length > 0) {
-            const textInsideDateBox = document.createElement('p')
+            const textInsideDateBox = document.createElement('p');
             textInsideDateBox.innerText = toDosForCurrentLoopDay.length;
             dayBoxes.append(textInsideDateBox);
         }
