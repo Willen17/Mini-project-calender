@@ -1,20 +1,15 @@
 
-
 /**
  * State
  */
 let isViewOnMobileDevices = false;
 
-/**
- * When document has loaded main function will run
- * and in turn call other functions.
- */
 function initheader() {
     addheaderEventListeners();
 }
 
 /**
- * addEventListeners
+ * Eventlyssnare
  */
 function addheaderEventListeners() {
     const todoMobileBtn = document.getElementById('todo-mobile-button');
@@ -27,7 +22,7 @@ function addheaderEventListeners() {
 }
 
 /**
- * Shows the todo section on mobile devices
+ * Visar todo asiden vid mobil vy
  */
 function showTodoListOnMobileDevice() {
     if(isViewOnMobileDevices === 'todo') {
@@ -49,7 +44,7 @@ function showTodoListOnMobileDevice() {
 }
 
 /**
- * shows the calendar section on mobile devices
+ * Visar kalendern vid mobil vy
  */
 function showCalendarOnMobileDevice() {
     if(isViewOnMobileDevices === 'calendar') {
@@ -71,6 +66,9 @@ function showCalendarOnMobileDevice() {
     }
 }
 
+/**
+ * Återställer styles när skärmen blir större än 768px
+ */
 function resetWindow() {
     const asideSection = document.getElementById('aside-section');
     const calendarSection = document.getElementById('calendar-section');
