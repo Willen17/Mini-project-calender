@@ -1,8 +1,9 @@
 ﻿# Kalender
 
-## Mini projekt genomfört av: Jonatan, Love & William
-<br>
+## Mini projekt genomfört av: Jonatan, Love & William <br>
+
 ### Beskrivning
+
 I detta projekt har vi fått i uppgift att designa och programmera en interaktiv kalender genom HTML, CSS och JavaScript. 
 Kalendersidan består av en titel och ett välkomstsegment där användaren kan se tid, veckodag och datum såväl som skapa och ta bort to-dos. Vidare består sidan av en kalendervy med det aktuella datumets dagar. Om det finns skapade to-dos kommer aktuellt datum att indikera en to-do via ett nummer. Sidan är även responsiv och på mindre enheter är det möjligt att toggla mellan 'välkomstsegmentvyn' och 'kalendervy'.<br><br>
 
