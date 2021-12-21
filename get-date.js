@@ -6,6 +6,7 @@ function initgetdate() {
   renderTodaysDate();
   updateClock();
   initClock();
+  renderSeason();
 }
 
 const date = new Date();
@@ -23,7 +24,7 @@ function renderTodaysDate() {
   const currentDateElement = document.getElementById('side-nav-current-date');
 
   currentDayElement.innerText = dateArray[0];
-  currentDateElement.innerText = dateArray[2] + ' ' + dateArray[1] + ' ' + dateArray[3];
+  currentDateElement.innerText = dateArray[1] + ' ' + dateArray[2] + ' ' + dateArray[3];
 }
 
 function updateClock() {
@@ -107,4 +108,22 @@ function getMonth() {
       break;
   }
   return month;
+}
+
+function renderSeason() {
+  const seasonElement = document.querySelector('.side-nav-shorttext');
+
+  if(date.getMonth() == 11 || date.getMonth() == 0 || date.getMonth() == 1) {
+    seasonElement.innerHTML = 'Vinter'
+  }
+  if(date.getMonth() == 2 || date.getMonth() == 3 || date.getMonth() == 4) {
+    seasonElement.innerHTML = 'Vår'
+  }
+  if(date.getMonth() == 5 || date.getMonth() == 6 || date.getMonth() == 7) {
+    seasonElement.innerHTML = 'Sommar'
+  }
+  if(date.getMonth() == 8 || date.getMonth() == 9 || date.getMonth() == 10) {
+    seasonElement.innerHTML = 'Höst'
+  }
+
 }

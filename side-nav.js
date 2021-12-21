@@ -70,9 +70,7 @@ function renderToDos() {
     }
 }
 
-/**
- *
- */
+
 function removeTodo(item) {
     const index = toDos.indexOf(item);
      toDos.splice(index, 1);
