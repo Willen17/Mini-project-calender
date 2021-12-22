@@ -133,7 +133,6 @@ function addDaysToGrid() {
     // If (last date of month is a saturday(6) = Only add 1 day from upcoming month instead of ++.)
 
     const testnumbers = 7 - ((IndexOflastDaysOfPreviousMonth + daysOfMonths) % 7);
-    console.log(testnumbers)
     /** Renders the first days of upcoming month */
     for (let nextDays = 1; nextDays <= testnumbers; nextDays++) {
 
