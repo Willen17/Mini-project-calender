@@ -56,7 +56,6 @@ const amountOfDaysToDisplayFromNextMonth = 7 - IndexOfFirstDaysOfNextMonth + 1;
 /** Displays current month in header */
 function displayCurrentMonth() {
     document.querySelector(".date h1").innerHTML = monthNameSwedish[month];
-    /** Visar pågående år i headern */
     document.getElementById('today').innerText = dateArray[3]
 }
 
