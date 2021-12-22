@@ -1,7 +1,8 @@
-#freezing-img {
-    font-size: 6rem;
+.freezing-img {
+    font-size: 1rem;
     margin-left: 1rem;
 }
+
 
 .nav-inner-div1 {
     margin: 1rem 1rem;
@@ -168,11 +169,13 @@
 @media (max-width: 1365px) {
     .nav-inner-div1 {
         flex-direction: column;
-        height: 40%;
+        height: 50%;
+        justify-content: center;
     }
+   
 
-    #freezing-img {
-        margin: 0;
+    .freezing-img {
+        margin-left:  0;
     }
 
     .side-nav-shorttext {
@@ -208,12 +211,8 @@
 
 }
 
-@media (max-width: 1020px) {
-    
-    .nav-inner-div1 {
-        justify-content: center;
-    }
-}
+
+
 
 @media (max-width: 900px) {
     .schedule-row2 {
@@ -252,7 +251,7 @@
 
     .nav-inner-div1 {
         flex-direction: row;
-        justify-content: space-around;
+        
     }
 
     .schedule-row1 {

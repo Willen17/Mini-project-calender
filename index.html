@@ -34,9 +34,11 @@
                 <ul class="flex gap1">
                     <li>
                         <a id="todo-mobile-button" href="#">Todo lista</a>
+                        <a id="todo-mobile-not-a-button" style="text-decoration: underline; display: none;">Todo lista</a>
                     </li>
                     <li>
                         <a id="calendar-mobile-button" href="#">Kalendervy</a>
+                        <a id="calendar-mobile-not-a-button" style="text-decoration: underline; display: none;">Kalendervy</a>
                     </li>
                 </ul>
             </nav>
@@ -55,15 +57,15 @@
 
 
         <nav id="aside-section" class="side-nav flex flex-column">
-            <div class="flex justify-between align-center nav-inner-div1">
+            <div class="flex justify-center align-center nav-inner-div1">
                 <div class="freezing-img-container">
-                    <p id="freezing-img">🥶</p>
+                    <!-- <p id="freezing-img"></p> -->
                 </div>
                 <div id="currentday-info" class="flex flex-column mr-05rem align-center">
-                    <p class="side-nav-shorttext">Vinter</p>
-                    <h2 id="side-nav-current-day">CURRENTDAY</h2>
-                    <p id="side-nav-current-date">CURRENTDATE</p>
-                    <p id="current-time"></p>
+                    <p class="side-nav-shorttext"><!-- CURRENTSEASON injected by get-date.js --></p>
+                    <h2 id="side-nav-current-day"><!-- CURRENTDAY injected by get-date.js --></h2>
+                    <p id="side-nav-current-date"><!-- CURRENTDATE injected by get-date.js --></p>
+                    <p id="current-time"><!-- CURRENTTIME injected by get-date.js --></p>
                 </div>
             </div>
             <div class="nav-inner-div2">
