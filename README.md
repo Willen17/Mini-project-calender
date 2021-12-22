@@ -1,20 +1,20 @@
-﻿# Kalender
+﻿# Calendar
 
-## Mini projekt genomfört av: Jonatan, Love & William <br>
+## Project made by: Jonatan, Love & William <br>
 
-### Beskrivning
+### Description
 
-I detta projekt har vi fått i uppgift att designa och programmera en interaktiv kalender genom HTML, CSS och JavaScript. 
-Kalendersidan består av en titel och ett välkomstsegment där användaren kan se tid, veckodag och datum såväl som skapa och ta bort to-dos. Vidare består sidan av en kalendervy med det aktuella datumets dagar. Om det finns skapade to-dos kommer aktuellt datum att indikera en to-do via ett nummer. Sidan är även responsiv och på mindre enheter är det möjligt att toggla mellan 'välkomstsegmentvyn' och 'kalendervy'.<br><br>
+In this project we have been given the task of designing and programming an interactive calendar through HTML, CSS and JavaScript.
+The calendar consists of a title and a welcome segment where the user can see time, day of the week and date as well as create and delete to-dos. Furthermore, the calendar displays the days of the current month. If there are any created to-dos, the current date will indicate a to-do with a number. The page is also responsive and on smaller devices it is possible to toggle between the 'welcome segment view' and the 'calendar view'.<br><br>
 
-[Länk till demo]( https://willen17.github.io/Mini-project-calender/)<br>
+[Link to demo]( https://willen17.github.io/Mini-project-calender/)<br>
 
-### Krav för betyg G:
+### Requirements for G:
 
-- [x] Skapa layouten enligt skiss (dölj kalender på mobilvy) <br>
-- [x] Skapa och designa titeln för verktyget <br>
-- [x] Skapa och designa välkomstsegmentet (delen ovanför todo-listan). Segmentet skall minst innehålla tid, veckodag och datum. <br>
-- [x] Användaren skall kunna lägga till en todo <br>
-- [x] Användaren skall kunna ta bort en todo <br>
-- [x] Skapa och designa kalendervyn med en månadsvy över aktuell månad <br>
-- [x] Skapade todos skall kopplas till kalender och visas med en siffra som representeras antal todos på en viss dag.<br>
+- [x] Create the layout according to the sketch (hide calendar on mobile view) <br>
+- [x] Create and design the title for the tool <br>
+- [x] Create and design the welcome segment (the part above the todo list). The segment must atleast contain time, day of the week and date<br>
+- [x] The user should be able to add a todo <br>
+- [x] The user should be able to delete a todo <br>
+- [x] Create and design the calendar view with a monthly view of the current month <br>
+- [x] Created todos should be linked to the calendar and displayed with a number that represents the number of todos on a given day<br>

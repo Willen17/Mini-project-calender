@@ -1,12 +1,25 @@
-
+/**
+ * Runs function on window load. Fetched from main.js
+ */
 function initGetPosition() {
     addGetPositionEventlisteners();
 }
+
+/**
+ * State
+ */
 let userCordinates = {latitude:'', longitude:''};
 
+/**
+ * EventListener
+ */
 function addGetPositionEventlisteners() {
-    document.getElementById('location-button').addEventListener('click', getLocation);    }
+    document.getElementById('location-button').addEventListener('click', getLocation);    
+}
 
+/**
+ * 
+ */
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -16,12 +29,19 @@ function getLocation() {
   document.getElementById('cookie-popup').classList.toggle('cookies-popdown');
 }
 
+/**
+ * 
+ * @param {number} position 
+ */
 function showPosition(position) {
     userCordinates.latitude = position.coords.latitude;
     userCordinates.longitude = position.coords.longitude;
-    fetchWeatherInfoForCurrentDay()
+    fetchWeatherInfoForCurrentDay();
 }
 
+/**
+ * 
+ */
 async function fetchWeatherInfoForCurrentDay() {
   try {
       const response = await fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+ parseInt(userCordinates.latitude) +'&lon=' + parseInt(userCordinates.longitude) + '&units=metric&exclude=minutely,hourly,daily,alerts&lang=sv&appid=9cad7f8da0da8d85ed29aa07aa5a3591');
@@ -34,6 +54,10 @@ async function fetchWeatherInfoForCurrentDay() {
   }
 }
 
+/**
+ * 
+ * @param {number} data 
+ */
 function renderWeather(data) {
   let temperature = data.current.temp;
   let weather = data.current.weather[0].description;

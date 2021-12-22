@@ -9,7 +9,7 @@ function initheader() {
 }
 
 /**
- * Eventlyssnare
+ * EventListener
  */
 function addheaderEventListeners() {
     const todoMobileBtn = document.getElementById('todo-mobile-button');
@@ -22,7 +22,7 @@ function addheaderEventListeners() {
 }
 
 /**
- * Visar todo asiden vid mobil vy
+ * Shows todo view on mobile device
  */
 function showTodoListOnMobileDevice() {
     if(isViewOnMobileDevices === 'todo') {
@@ -44,7 +44,7 @@ function showTodoListOnMobileDevice() {
 }
 
 /**
- * Visar kalendern vid mobil vy
+ * Shows calendar view on mobile device
  */
 function showCalendarOnMobileDevice() {
     if(isViewOnMobileDevices === 'calendar') {
@@ -67,7 +67,7 @@ function showCalendarOnMobileDevice() {
 }
 
 /**
- * Återställer styles när skärmen blir större än 768px
+ * Reset styles when window object is larger than 768px
  */
 function resetWindow() {
     const asideSection = document.getElementById('aside-section');
