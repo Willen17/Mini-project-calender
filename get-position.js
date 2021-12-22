@@ -6,19 +6,19 @@ function initGetPosition() {
 }
 
 /**
- * State
+ * State for the users' coordinates.
  */
 let userCordinates = {latitude:'', longitude:''};
 
 /**
- * EventListener
+ * EventListener for the accept cookies-popup
  */
 function addGetPositionEventlisteners() {
     document.getElementById('location-button').addEventListener('click', getLocation);    
 }
 
 /**
- * 
+ * If user accepts cookies runs a function to get user's position
  */
 function getLocation() {
   if (navigator.geolocation) {
@@ -30,7 +30,7 @@ function getLocation() {
 }
 
 /**
- * 
+ * Adds the users' coordinates to the userCordinates object
  * @param {number} position 
  */
 function showPosition(position) {
@@ -40,22 +40,20 @@ function showPosition(position) {
 }
 
 /**
- * 
+ * Fetches weather-data based on users' coordinates from api. 
  */
 async function fetchWeatherInfoForCurrentDay() {
   try {
     const response = await fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + parseInt(userCordinates.latitude) + '&lon=' + parseInt(userCordinates.longitude) + '&units=metric&exclude=minutely,hourly,daily,alerts&lang=sv&appid=9cad7f8da0da8d85ed29aa07aa5a3591');
     const data = await response.json();
-    console.log(data);
     renderWeather(data);
-    // renderAllHolidays(data);
   } catch (error) {
     console.error(error);
   }
 }
 
 /**
- * 
+ * Converts the weather data to strings, renders the weather data and renders an emoji based on which temperature it is.
  * @param {number} data 
  */
 function renderWeather(data) {
