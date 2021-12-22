@@ -2,10 +2,7 @@
 function initCalendar() {
     addDaysToGrid();
     displayCurrentMonth();
-
-
 }
-
 
 /** Fetches dates from server. Filtered by year, month, date and weekday */
 const dateObject = new Date();
@@ -29,7 +26,6 @@ const indexOfFirstDayOfCurrentMonth = new Date(year, month, 1, dayName).getDay()
 // Example: 31st of October is a Sunday
 const indexOfLastDayOfCurrentMonth = new Date(year, month + 1, 0, dayName).getDay();
 
-
 /** Fetches the last day of previous month */
 const lastDaysOfPreviousMonth = new Date(year, month, 0).getDate();
 
@@ -37,14 +33,11 @@ const lastDaysOfPreviousMonth = new Date(year, month, 0).getDate();
 // Monday = 1
 const IndexOflastDaysOfPreviousMonth = new Date(year, month, 0).getDay();
 
-
 /** Fetches the first day of upcoming month*/
 const firstDayOfNextMonth = new Date(year, month + 1, 1).getDate();
 
-
 /** Fetches the indexnumber (weekday) of the first day in upcoming month */
 const IndexOfFirstDaysOfNextMonth = new Date(year, month + 1, 1).getDay();
-
 
 /** Translates months from numbers to Swedish month-names */
 const monthNameSwedish = ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"]
@@ -58,9 +51,6 @@ function displayCurrentMonth() {
     document.querySelector(".date h1").innerHTML = monthNameSwedish[month];
     document.getElementById('today').innerText = dateArray[3]
 }
-
-
-
 
 /** Adds divs with dates in calendar */
 function addDaysToGrid() {
@@ -82,22 +72,15 @@ function addDaysToGrid() {
 
     }
 
-
-
-
-
-
     /** Adds amount of divs by how many days of displayed month, inside of calendar-content-div */
     // Also adds content & classes to the divs
     for (let days = 1; days <= daysOfMonths; days++) {
         let dayBoxes = document.createElement('div');
         dayBoxes.className = "days";
 
-
         let displayDate = document.createElement('p');
         dayBoxes.append(displayDate);
         displayDate.innerText = `${days}`;
-
 
         calendarContent.appendChild(dayBoxes);
 
@@ -115,7 +98,7 @@ function addDaysToGrid() {
 
         const toDosForCurrentLoopDay = toDos.filter((toDo) => { // Filters all of our todos and checks if they match with currentloopdaydate
             const toDoDate = new Date(toDo.date);
-            return areDatesMatching(currentLoopDate, toDoDate); 
+            return areDatesMatching(currentLoopDate, toDoDate);
         });
 
         if (toDosForCurrentLoopDay.length > 0) {
@@ -128,7 +111,6 @@ function addDaysToGrid() {
         calendarContent.append(dayBoxes);
     }
 
-    
     // If (last date of month is a saturday(6) = Only add 1 day from upcoming month instead of ++.)
 
     const testnumbers = 7 - ((IndexOflastDaysOfPreviousMonth + daysOfMonths) % 7);
@@ -146,13 +128,10 @@ function addDaysToGrid() {
 
         calendarContent.appendChild(dayBoxes);
     }
-
 }
-
 
 function displayPrevMonth() {
     month = month - 1;
-
 
     if (month < 0) {
         month = 11;
@@ -167,9 +146,8 @@ function displayNextMonth() {
         month = 0;
     }
     document.querySelector(".date h1").innerHTML = monthNameSwedish[month];
-
 }
 
 function areDatesMatching(date1, date2) { // Checks if the dates are matching
-    return  date1.getFullYear() === date2.getFullYear() && date1.getMonth() === date2.getMonth() && date1.getDate() === date2.getDate();
-  }
+    return date1.getFullYear() === date2.getFullYear() && date1.getMonth() === date2.getMonth() && date1.getDate() === date2.getDate();
+}
