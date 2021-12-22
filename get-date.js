@@ -1,5 +1,5 @@
 
-
+/** Starts the program */
 function initgetdate() {
   // addEventListeners();
   getTodaysDate();
@@ -9,16 +9,16 @@ function initgetdate() {
   renderSeason();
 }
 
+/**  Creates a date-object */
 const date = new Date();
 let dateArray = [];
 
+/** Gets the current date and adds it to the dateArray */
 function getTodaysDate() {
-
   dateArray.push(getDay(), date.getDate(), getMonth(), date.getFullYear());
-
-  console.log(dateArray);
 }
 
+/** Render todays date*/
 function renderTodaysDate() {
   const currentDayElement = document.getElementById('side-nav-current-day');
   const currentDateElement = document.getElementById('side-nav-current-date');
@@ -27,6 +27,7 @@ function renderTodaysDate() {
   currentDateElement.innerText = dateArray[1] + ' ' + dateArray[2] + ' ' + dateArray[3];
 }
 
+/** Creates a clock and renders it */
 function updateClock() {
   const now = new Date();
   hours = now.getHours().toString().padStart(2, '0'),
@@ -36,10 +37,12 @@ function updateClock() {
   timeElement.innerText = hours + ':' + minutes +  ':' + seconds;
 }
 
+/** Runs the clock every second */
 function initClock() {
   window.setInterval('updateClock()', 1);
 }
 
+/** Gets the current day and coverts it to a swedish weekday */
 function getDay() {
   let day;
   switch (date.getDay()) {
@@ -67,6 +70,7 @@ function getDay() {
   return day;
 }
 
+/** Gets the current month and coverts it to a swedish weekday */
 function getMonth() {
   let month;
   switch (date.getMonth()) {
@@ -110,6 +114,7 @@ function getMonth() {
   return month;
 }
 
+/**Renders the current season in swedish based in which month it is */
 function renderSeason() {
   const seasonElement = document.querySelector('.side-nav-shorttext');
 

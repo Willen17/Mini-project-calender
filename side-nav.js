@@ -1,12 +1,17 @@
 
-
+//** Starts the program */
 function initsidenav() {
     addEventListeners();
 }
 
+/**An array which will include ths toDos */
 let toDos = [];
+
+/** A state for if the toDoinput is open or closed */
 let isToDoElementOpen = false 
 
+
+//** Adds eventlisteners for the toDo-segment */
 function addEventListeners() {
     document.getElementById('add-todo').addEventListener('click', showToDoElement);
     document.getElementById('scheduleinput').addEventListener('submit', createToDo);
@@ -24,6 +29,7 @@ function showToDoElement() {
     }
 }
 
+/**Creates FormData-object from the users' input. Pushes each object in the FormData to the ToDo array. */
 function createToDo(event) {
     event.preventDefault();
     showToDoElement();
@@ -36,10 +42,9 @@ function createToDo(event) {
     renderToDos();
     event.target.reset();
     initCalendar();
-   
-    // Rendera om kalenderlistan och todo-listan
 }
 
+//**Renders the toDos from the toDo-aray into the ToDo-list. */
 function renderToDos() {
     const parentDiv = document.querySelector('#todos-container');
     parentDiv.innerHTML = '';
@@ -70,7 +75,7 @@ function renderToDos() {
     }
 }
 
-
+/**Removes the toDo from the array and from the DOM. */
 function removeTodo(item) {
     const index = toDos.indexOf(item);
      toDos.splice(index, 1);
