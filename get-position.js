@@ -90,11 +90,11 @@ function renderWeather(data) {
 
 
 
-  if (temperature < 0) {
+  if (temperature < 1) {
     emojiElement.innerText = '🥶';
     emojiElement.style.fontSize = 6 + 'rem';
   }
-  if (temperature < 5 && temperature > 0) {
+  if (temperature < 5 && temperature > 1) {
     emojiElement.innerText = '😬';
     emojiElement.style.fontSize = 6 + 'rem';
   }
